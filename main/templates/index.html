@@ -78,7 +78,8 @@
           
         </div>
     
-        <button type="button" class="btn btn-outline-primary"><a href="{% url 'update_task' task.id %}">Update</a></button>
+        <button type="button" class="btn btn-primary"><a href="{% url 'update_task' task.id %}">Update</a></button>
+        <button type="button" class="btn btn-danger"><a href="{% url 'delete_task' task.id %}">Delete</a></button>
     {% endfor %}
 </div>
 </div>

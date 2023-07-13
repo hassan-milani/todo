@@ -44,3 +44,17 @@ def update_task(request, id):
     
     return render(request, 'update_task.html', context = context)
 
+
+def delete_task(request, id):
+    instance = Task.objects.get(id = id)
+   
+    if request.method == "POST":
+        instance.delete()
+        
+        return redirect("home")
+            
+    context = {
+        "task":instance
+    }
+    return render(request, 'delete_task.html', context=context)
+
