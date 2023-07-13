@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Update
+{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+<div class="input-group">
+
+    {% for field in form  %}
+        <div class="from-control mt-3">
+            {{field.name}}
+            {{field}}
+        </div>
+  {% endfor %}
+  <button type="submit" class="btn btn-primary">Save changes</button>
+</div>
+
+</form>
+
+{% endblock content %}
